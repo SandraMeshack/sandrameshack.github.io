@@ -7,6 +7,70 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
+  /* 1. Accent Color + Link Hover */
+  a {
+    color: #4dd0e1;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  strong {
+    color: #f97316; /* playful orange for highlights */
+  }
+
+  /* 2. Animated Section Titles */
+  h2 {
+    position: relative;
+    animation: slideIn 0.9s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* 3. Gradient underline on link hover */
+  a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: linear-gradient(to right, #4dd0e1, #f97316);
+    transition: width 0.4s ease;
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
+
+  /* 4. Floating emoji shape (optional fun background) */
+  .emoji-bg {
+    position: absolute;
+    top: 120px;
+    right: 30px;
+    font-size: 3rem;
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+</style>
+
+  <style>
     @keyframes fadeSlideUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
